@@ -2,9 +2,13 @@
 const plugin = require('../admin/src/pluginId')
 
 module.exports = ({ strapi }) => {
-    strapi.customFields.register({
+    strapi.customFields.register([{
         name: 'multi-select',
         plugin,
         type: 'json',
-    });
+    }, {
+        name: 'single-select',
+        plugin,
+        type: 'string',
+    }]);
 };
